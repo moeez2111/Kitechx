@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const FOUNDERS = [
-  { name: 'Muhammad Moeez Asim', role: 'CEO & Lead Developer', initials: 'MA' },
+  { name: 'Muqadas Sharif',       role: 'Co-Founder & Strategist', initials: 'MS' },
   { name: 'Muhammad Ashir',       role: 'CTO & Architect',      initials: 'AS' },
+  { name: 'Muhammad Moeez Asim', role: 'CEO & Lead Developer', initials: 'MA' },
   { name: 'Rizwan Ameen',         role: 'COO & Project Manager', initials: 'RA' },
   { name: 'Muhammad Shoaib Aslam',role: 'Head of Design',        initials: 'SA' },
   { name: 'Suleman Anjum',        role: 'Marketing Director',    initials: 'SU' },
-  { name: 'Muqadas Sharif',       role: 'Co-Founder & Strategist', initials: 'MS' },
+  
 ]
 
 const FEATURED_SERVICES = [
