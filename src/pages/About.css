@@ -1,17 +1,24 @@
-/* ===== ABOUT PAGE ===== */
+/* ===== ABOUT PAGE — LIGHT PRO ===== */
+
 .about-hero {
   padding: 10rem 2rem 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: #fff;
 }
 
-.about-hero .orb {
-  width: 700px;
-  height: 700px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.about-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(91,63,248,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.about-hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(91,63,248,0.08) 0%, transparent 70%);
 }
 
 .about-hero-content {
@@ -26,19 +33,19 @@
   font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: 0.02em;
   line-height: 0.95;
-  color: #fff;
+  color: var(--clr-text);
   margin-bottom: 1.5rem;
 }
 
 .about-hero h1 span {
-  background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-accent));
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .about-hero p {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: var(--clr-text-muted);
   line-height: 1.8;
   max-width: 620px;
@@ -47,8 +54,8 @@
 
 /* MISSION STRIP */
 .mission-strip {
-  background: linear-gradient(135deg, var(--clr-primary), rgba(0,240,192,0.8));
-  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-deep));
+  padding: 1.35rem 2rem;
   overflow: hidden;
 }
 
@@ -63,25 +70,24 @@
 
 @keyframes ticker {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
 .mission-ticker span {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.88);
 }
 
-.ticker-dot {
-  color: rgba(255,255,255,0.4) !important;
-}
+.ticker-dot { color: rgba(255,255,255,0.35) !important; }
 
-/* VISION & MISSION */
+/* VM SECTION */
 .vm-section {
   padding: 8rem 2rem;
   position: relative;
   overflow: hidden;
+  background: var(--clr-bg2);
 }
 
 .vm-grid {
@@ -93,10 +99,10 @@
 }
 
 .vm-card {
-  background: var(--clr-surface);
+  background: #fff;
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
-  padding: 3rem;
+  padding: 2.75rem;
   position: relative;
   overflow: hidden;
   transition: var(--transition);
@@ -105,45 +111,46 @@
 .vm-card::before {
   content: '';
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 150px;
-  height: 150px;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: var(--vm-color, rgba(110,80,255,0.08));
-  filter: blur(40px);
+  background: var(--vm-color, rgba(91,63,248,0.06));
+  filter: blur(30px);
 }
 
 .vm-card:hover {
-  border-color: rgba(110, 80, 255, 0.4);
+  border-color: rgba(91, 63, 248, 0.28);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .vm-card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
   display: block;
 }
 
 .vm-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--clr-text);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .vm-card p {
   color: var(--clr-text-muted);
   line-height: 1.8;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .vm-card ul {
   margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .vm-card ul li {
@@ -151,21 +158,21 @@
   align-items: flex-start;
   gap: 0.6rem;
   color: var(--clr-text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .vm-card ul li::before {
   content: '✦';
   color: var(--clr-accent);
-  font-size: 0.7rem;
-  margin-top: 4px;
+  font-size: 0.65rem;
+  margin-top: 5px;
   flex-shrink: 0;
 }
 
 /* VALUES */
 .values-section {
-  padding: 6rem 2rem;
-  background: var(--clr-bg2);
+  padding: 7rem 2rem;
+  background: #fff;
 }
 
 .values-grid {
@@ -177,7 +184,7 @@
 }
 
 .value-card {
-  background: var(--clr-surface);
+  background: var(--clr-bg2);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -186,13 +193,14 @@
 }
 
 .value-card:hover {
-  border-color: var(--clr-primary);
-  transform: translateY(-4px);
-  background: rgba(110, 80, 255, 0.05);
+  border-color: rgba(91, 63, 248, 0.28);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  background: #fff;
 }
 
 .value-icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   display: block;
 }
@@ -200,15 +208,15 @@
 .value-card h4 {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--clr-text);
   margin-bottom: 0.5rem;
 }
 
 .value-card p {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--clr-text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* GLOBAL REACH */
@@ -217,13 +225,14 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: var(--clr-bg2);
 }
 
 .reach-countries {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.85rem;
   margin-top: 3rem;
   max-width: 800px;
   margin-left: auto;
@@ -233,27 +242,26 @@
 .country-tag {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--clr-surface);
+  gap: 0.45rem;
+  background: #fff;
   border: 1px solid var(--clr-border);
   border-radius: 100px;
-  padding: 0.6rem 1.4rem;
+  padding: 0.55rem 1.35rem;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--clr-text-muted);
   transition: var(--transition);
 }
 
 .country-tag:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent);
-  background: rgba(0, 240, 192, 0.05);
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background: rgba(91, 63, 248, 0.04);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 768px) {
-  .vm-grid {
-    grid-template-columns: 1fr;
-  }
+  .vm-grid { grid-template-columns: 1fr; }
 }

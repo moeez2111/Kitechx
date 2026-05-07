@@ -5,18 +5,19 @@ import AIAgent from './components/AIAgent'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Projects from './pages/Projects'
 import Footer from './components/Footer'
-
+import Services from './pages/Services'
+import ScrollToTop from './components/ScrollToTop'
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
       <AIAgent />

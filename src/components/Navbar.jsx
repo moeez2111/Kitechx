@@ -20,15 +20,15 @@ export default function Navbar() {
         <div className="navbar-inner">
           <Link to="/" className="navbar-logo" onClick={closeMenu}>
             <div className="logo-icon">KX</div>
-            <span className="logo-text">KITECHX</span>
+            <span className="logo-wordmark">KITECHX</span>
           </Link>
 
           <ul className="nav-links">
             <li><NavLink to="/" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`} end>Home</NavLink></li>
-            <li><NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>About Us</NavLink></li>
-            <li><NavLink to="/projects" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Projects</NavLink></li>
-            <li><NavLink to="/contact" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Contact Us</NavLink></li>
-            <li><Link to="/contact" className="nav-cta">Get Started</Link></li>
+            <li><NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>About</NavLink></li>
+            <li><NavLink to="/services" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Services</NavLink></li>
+            <li><NavLink to="/contact" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Contact</NavLink></li>
+            <li><Link to="/contact" className="nav-cta">Get Started →</Link></li>
           </ul>
 
           <div
@@ -43,9 +43,9 @@ export default function Navbar() {
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <NavLink to="/" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu} end>Home</NavLink>
-        <NavLink to="/about" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>About Us</NavLink>
-        <NavLink to="/projects" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>Projects</NavLink>
-        <NavLink to="/contact" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>Contact Us</NavLink>
+        <NavLink to="/about" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>About</NavLink>
+        <NavLink to="/services" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>Services</NavLink>
+        <NavLink to="/contact" className={({isActive}) => `mobile-nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>Contact</NavLink>
         <Link to="/contact" className="mobile-nav-link mobile-cta" onClick={closeMenu}>Get Started →</Link>
       </div>
     </header>

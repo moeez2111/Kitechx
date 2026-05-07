@@ -23,9 +23,7 @@ const SERVICES_LIST = [
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: '', email: '', phone: '', service: '', budget: '', message: ''
-  })
+  const [form, setForm] = useState({ name:'', email:'', phone:'', service:'', budget:'', message:'' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
@@ -49,24 +47,19 @@ export default function Contact() {
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 1500)
+    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1500)
   }
 
   return (
     <main className="page-enter">
       {/* HERO */}
       <section className="contact-hero">
-        <div className="orb orb-teal" />
+        <div className="contact-hero-pattern" />
+        <div className="contact-hero-glow" />
         <div className="contact-hero-content">
           <div className="section-tag">✦ Let's Connect</div>
           <h1>Get In <span>Touch</span></h1>
-          <p>
-            Have a project in mind? A question? Or just want to say hello?
-            We'd love to hear from you. Our team responds within 24 hours.
-          </p>
+          <p>Have a project in mind? A question? Or just want to say hello? We'd love to hear from you. Our team responds within 24 hours.</p>
         </div>
       </section>
 
@@ -77,7 +70,7 @@ export default function Contact() {
           <div className="contact-info">
             <div className="contact-info-header">
               <h2>Contact Details</h2>
-              <p>Reach us through any of the channels below. We're a fast-responding team!</p>
+              <p>Reach us through any channel below. We're a fast-responding team!</p>
             </div>
 
             <div className="contact-card">
@@ -91,7 +84,7 @@ export default function Contact() {
                 <span style={{ fontSize: '0.8rem', color: 'var(--clr-text-dim)' }}>We reply within 24 hours</span>
                 <div>
                   <div className="availability-badge">
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--clr-accent)', display: 'inline-block' }} />
+                    <span style={{ width:6, height:6, borderRadius:'50%', background:'var(--clr-accent)', display:'inline-block' }} />
                     Available for new projects
                   </div>
                 </div>
@@ -105,9 +98,7 @@ export default function Contact() {
               </div>
               <div className="contact-detail">
                 {PHONES.map(p => (
-                  <div key={p}>
-                    <a href={`tel:+92${p.slice(1)}`}>+92 {p.slice(1, 3)} {p.slice(3)}</a>
-                  </div>
+                  <div key={p}><a href={`tel:+92${p.slice(1)}`}>+92 {p.slice(1,3)} {p.slice(3)}</a></div>
                 ))}
               </div>
             </div>
@@ -118,9 +109,8 @@ export default function Contact() {
                 <h4>Our Location</h4>
               </div>
               <div className="contact-detail">
-                <strong style={{ color: 'var(--clr-text)' }}>Lahore Cantt, Punjab, Pakistan</strong>
-                <br />
-                <span style={{ marginTop: '0.25rem', display: 'inline-block' }}>
+                <strong style={{ color:'var(--clr-text)' }}>Lahore Cantt, Punjab, Pakistan</strong><br />
+                <span style={{ marginTop:'0.25rem', display:'inline-block' }}>
                   Serving clients globally across<br />
                   USA · UK · Europe · Middle East
                 </span>
@@ -133,9 +123,9 @@ export default function Contact() {
                 <h4>Working Hours</h4>
               </div>
               <div className="contact-detail">
-                <strong style={{ color: 'var(--clr-text)' }}>Mon – Sat:</strong> 9:00 AM – 8:00 PM PKT<br />
-                <strong style={{ color: 'var(--clr-text)' }}>Sunday:</strong> Emergency support only<br />
-                <span style={{ fontSize: '0.8rem', color: 'var(--clr-accent)', marginTop: '0.25rem', display: 'inline-block' }}>
+                <strong style={{ color:'var(--clr-text)' }}>Mon – Sat:</strong> 9:00 AM – 8:00 PM PKT<br />
+                <strong style={{ color:'var(--clr-text)' }}>Sunday:</strong> Emergency support only<br />
+                <span style={{ fontSize:'0.8rem', color:'var(--clr-accent)', marginTop:'0.25rem', display:'inline-block' }}>
                   We coordinate across time zones for international clients
                 </span>
               </div>
@@ -149,13 +139,13 @@ export default function Contact() {
                 <span className="success-icon">🎉</span>
                 <h3>Message Received!</h3>
                 <p>
-                  Thank you for reaching out. Our team will review your query and
-                  get back to you at <strong style={{ color: 'var(--clr-primary-light)' }}>{form.email}</strong> within 24 hours.
+                  Thank you for reaching out. Our team will review your query and get back to you at{' '}
+                  <strong style={{ color:'var(--clr-primary)' }}>{form.email}</strong> within 24 hours.
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' }) }}
+                  onClick={() => { setSubmitted(false); setForm({ name:'', email:'', phone:'', service:'', budget:'', message:'' }) }}
                   className="btn-outline"
-                  style={{ marginTop: '1.5rem', display: 'inline-flex' }}
+                  style={{ marginTop:'1.5rem', display:'inline-flex' }}
                 >
                   Send Another Message
                 </button>
@@ -169,48 +159,28 @@ export default function Contact() {
                   <div className="form-row">
                     <div className="form-group">
                       <label>Full Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        style={errors.name ? { borderColor: 'var(--clr-accent2)' } : {}}
-                      />
-                      {errors.name && <span style={{ fontSize: '0.75rem', color: 'var(--clr-accent2)' }}>{errors.name}</span>}
+                      <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe"
+                        style={errors.name ? { borderColor:'var(--clr-accent2)' } : {}} />
+                      {errors.name && <span style={{ fontSize:'0.75rem', color:'var(--clr-accent2)' }}>{errors.name}</span>}
                     </div>
                     <div className="form-group">
                       <label>Email Address *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        placeholder="john@company.com"
-                        style={errors.email ? { borderColor: 'var(--clr-accent2)' } : {}}
-                      />
-                      {errors.email && <span style={{ fontSize: '0.75rem', color: 'var(--clr-accent2)' }}>{errors.email}</span>}
+                      <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="john@company.com"
+                        style={errors.email ? { borderColor:'var(--clr-accent2)' } : {}} />
+                      {errors.email && <span style={{ fontSize:'0.75rem', color:'var(--clr-accent2)' }}>{errors.email}</span>}
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
                       <label>Phone / WhatsApp</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={form.phone}
-                        onChange={handleChange}
-                        placeholder="+1 234 567 8900"
-                      />
+                      <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+1 234 567 8900" />
                     </div>
                     <div className="form-group">
                       <label>Service Required</label>
                       <select name="service" value={form.service} onChange={handleChange}>
                         <option value="">Select a service…</option>
-                        {SERVICES_LIST.map(s => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
+                        {SERVICES_LIST.map(s => <option key={s} value={s}>{s}</option>)}
                       </select>
                     </div>
                   </div>
@@ -229,15 +199,10 @@ export default function Contact() {
 
                   <div className="form-group">
                     <label>Your Query / Message *</label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      rows={5}
+                    <textarea name="message" value={form.message} onChange={handleChange} rows={5}
                       placeholder="Tell us about your project, timeline, goals, and any specific requirements…"
-                      style={errors.message ? { borderColor: 'var(--clr-accent2)' } : {}}
-                    />
-                    {errors.message && <span style={{ fontSize: '0.75rem', color: 'var(--clr-accent2)' }}>{errors.message}</span>}
+                      style={errors.message ? { borderColor:'var(--clr-accent2)' } : {}} />
+                    {errors.message && <span style={{ fontSize:'0.75rem', color:'var(--clr-accent2)' }}>{errors.message}</span>}
                   </div>
 
                   <button type="submit" className="form-submit" disabled={loading}>
@@ -252,17 +217,12 @@ export default function Contact() {
 
       {/* WORLDWIDE */}
       <section className="worldwide-section">
-        <div className="section-tag" style={{ justifyContent: 'center' }}>✦ Global Services</div>
-        <h2 className="section-title" style={{ textAlign: 'center', marginTop: '0.5rem' }}>
+        <div className="section-tag" style={{ justifyContent:'center' }}>✦ Global Services</div>
+        <h2 className="section-title" style={{ textAlign:'center', marginTop:'0.5rem' }}>
           We Work <span>Everywhere</span>
         </h2>
         <div className="worldwide-logos">
-          {[
-            '🇵🇰 Pakistan', '🇺🇸 United States', '🇬🇧 United Kingdom',
-            '🇩🇪 Germany', '🇫🇷 France', '🇮🇹 Italy',
-            '🇦🇪 UAE', '🇸🇦 Saudi Arabia', '🇶🇦 Qatar',
-            '🇳🇱 Netherlands', '🇪🇸 Spain', '🇨🇦 Canada',
-          ].map(c => (
+          {['🇵🇰 Pakistan','🇺🇸 United States','🇬🇧 United Kingdom','🇩🇪 Germany','🇫🇷 France','🇮🇹 Italy','🇦🇪 UAE','🇸🇦 Saudi Arabia','🇶🇦 Qatar','🇳🇱 Netherlands','🇪🇸 Spain','🇨🇦 Canada'].map(c => (
             <div key={c} className="ww-item">{c}</div>
           ))}
         </div>

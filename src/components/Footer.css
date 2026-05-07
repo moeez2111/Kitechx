@@ -1,7 +1,7 @@
-/* ===== FOOTER ===== */
+/* ===== FOOTER — LIGHT PRO ===== */
 .footer {
-  background: var(--clr-bg2);
-  border-top: 1px solid var(--clr-border);
+  background: var(--clr-text);
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 5rem 2rem 2rem;
   position: relative;
   overflow: hidden;
@@ -13,9 +13,9 @@
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 120px;
-  background: radial-gradient(ellipse, rgba(110,80,255,0.15) 0%, transparent 70%);
+  width: 700px;
+  height: 140px;
+  background: radial-gradient(ellipse, rgba(91,63,248,0.20) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -28,30 +28,27 @@
   margin-bottom: 4rem;
 }
 
-.footer-brand .logo-text {
+.footer-brand .logo-wordmark {
   font-family: var(--font-display);
   font-size: 2rem;
   letter-spacing: 0.05em;
-  background: linear-gradient(135deg, #fff, var(--clr-primary-light));
+  background: linear-gradient(135deg, #fff, rgba(155,127,255,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .footer-brand p {
-  color: var(--clr-text-muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.88rem;
+  line-height: 1.75;
   margin-top: 1rem;
   max-width: 280px;
 }
 
 .footer-socials {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
   margin-top: 1.5rem;
 }
 
@@ -59,13 +56,15 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--clr-text-muted);
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
   transition: var(--transition);
   cursor: pointer;
 }
@@ -80,22 +79,22 @@
 .footer-col h4 {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--clr-text);
+  color: rgba(255,255,255,0.9);
   margin-bottom: 1.25rem;
 }
 
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .footer-col ul li a {
-  color: var(--clr-text-muted);
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.48);
+  font-size: 0.88rem;
   transition: var(--transition);
 }
 
@@ -108,9 +107,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  color: var(--clr-text-muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  color: rgba(255,255,255,0.48);
+  font-size: 0.84rem;
+  line-height: 1.55;
   margin-bottom: 0.75rem;
 }
 
@@ -124,7 +123,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid var(--clr-border);
+  border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,8 +132,8 @@
 }
 
 .footer-bottom p {
-  color: var(--clr-text-dim);
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.83rem;
 }
 
 .footer-bottom-links {
@@ -143,31 +142,22 @@
 }
 
 .footer-bottom-links a {
-  color: var(--clr-text-dim);
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.83rem;
   transition: color 0.3s;
 }
 
-.footer-bottom-links a:hover {
-  color: var(--clr-primary-light);
-}
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
 
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
+  .footer-brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 550px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
 }

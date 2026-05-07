@@ -7,14 +7,14 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="logo-text">⚡ KITECHX</div>
+          <div className="logo-wordmark">⚡ KITECHX</div>
           <p>
             Transforming ideas into powerful digital experiences. We engineer
             the future — one project at a time. Global reach, local heart.
           </p>
           <div className="footer-socials">
-            {['in', 'fb', 'ig', 'tw', 'yt'].map(s => (
-              <div key={s} className="social-btn">{s.toUpperCase()}</div>
+            {['IN','FB','IG','TW','YT'].map(s => (
+              <div key={s} className="social-btn">{s}</div>
             ))}
           </div>
         </div>
@@ -24,7 +24,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/services">Services</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
@@ -50,11 +50,11 @@ export default function Footer() {
           </div>
           <div className="footer-contact-item">
             <span className="icon">📍</span>
-            <span>Lahore Cantt, Pakistan<br/>Serving USA · UK · Europe · Middle East</span>
+            <span>Lahore Cantt, Pakistan<br />Serving USA · UK · Europe · Middle East</span>
           </div>
           <div className="footer-contact-item">
             <span className="icon">📞</span>
-            <span>+92 334 4495146<br/>+92 309 4477653</span>
+            <span>+92 334 4495146<br />+92 309 4477653</span>
           </div>
         </div>
       </div>
